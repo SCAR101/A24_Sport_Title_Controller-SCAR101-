@@ -1,0 +1,65 @@
+﻿<Window x:Class="A24_Sport_Title_Controller.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:A24_Sport_Title_Controller" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" MinHeight="900" MinWidth="1800" ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        WindowState="{Binding WindowState, Mode=TwoWay}">
+    <Grid x:Name="gridMain">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="37"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Background="#FF406787" Height="35" VerticalAlignment="Top" MouseLeftButtonDown="GridUp_MouseLeftButtonDown" Loaded="Grid_Loaded">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="35"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="150"/>
+            </Grid.ColumnDefinitions>
+            <Image Grid.Column="0"  x:Name="imageLogo" Height="35" Width="35" KeyboardNavigation.TabNavigation="None" Focusable="False" Source="pack://application:,,,/Resources/A24 Sport Title Controller.png" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <TextBlock Grid.Column="1" KeyboardNavigation.TabNavigation="None" Focusable="False"  Text="A24 Sport Title Controller" Foreground="White" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Left" FontFamily="Poor Richard"/>
+            <StackPanel Grid.Column="2" KeyboardNavigation.TabNavigation="None" VerticalAlignment="Center" Orientation="Horizontal" HorizontalAlignment="Right" Margin="6 0">
+                <materialDesign:PopupBox KeyboardNavigation.TabNavigation="None" Margin="0" PlacementMode="BottomAndAlignRightEdges" StaysOpen="False" Padding="0" Background="#FF343434" Foreground="White">
+                    <StackPanel  Width="160" Background="#FF2A2A30">
+                        <Button x:Name="btnAbout" Content="О программе" Command="{Binding ClickAbout}" Foreground="White" FontFamily="Times New Roman" FontSize="14"/>
+                        <Separator Foreground="#FF406787" Background="#FF406787"/>
+                        <Button x:Name="btnWinMini" Content="Свернуть"  Foreground="White" FontFamily="Times New Roman" PreviewMouseLeftButtonDown="btnMinimize_PreviewMouseLeftButtonDown" FontSize="14"/>
+                        <Button x:Name="btnWinMax" Content="Развернуть"  Foreground="White" FontFamily="Times New Roman" PreviewMouseLeftButtonDown="btnMaximaze_PreviewMouseLeftButtonDown" FontSize="14"/>
+                        <Button x:Name="btnAppExit" Content="Выход" PreviewMouseLeftButtonDown="btnClose_PreviewMouseLeftButtonDown" Foreground="White" FontFamily="Times New Roman" FontSize="14"/>
+                    </StackPanel>
+                </materialDesign:PopupBox>
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Row="1" Focusable="False" KeyboardNavigation.TabNavigation="None" Background="#FF1C1C21">
+            <Frame x:Name="CurrentPage" Content="{Binding CurrentPage}" NavigationUIVisibility="Hidden" Opacity="{Binding FrameOpacity}"/>
+        </Grid>
+        <Grid Grid.Row="2" Background="#FF406787">
+            <StackPanel Orientation="Horizontal" Background="#FF2A2A30" Margin="0 1 0 1">
+                <!--<Separator Background="#FF406787" KeyboardNavigation.TabNavigation="None" Focusable="False"/>-->
+                <TextBlock Text="IP - адрес сервера Caspar CG:" Foreground="White" FontFamily="Times New Roman" FontSize="18" Margin="10 0 0 0" VerticalAlignment="Center"/>
+                <TextBox Width="90" Text="{Binding TxbServerAddress}" Background="White" Foreground="Black" Margin="10 0 0 0" VerticalAlignment="Center" />
+                <TextBlock Text="Порт:" Foreground="White" Margin="10 0 0 0" FontFamily="Times New Roman" FontSize="18" VerticalAlignment="Center"/>
+                <TextBox Width="35" Text="{Binding TxbPort}" Background="White" Foreground="Black" Margin="10 0 0 0" VerticalAlignment="Center"/>
+                <TextBlock Text="Статус:" Foreground="White" Margin="10 0 0 0" FontFamily="Times New Roman" FontSize="18" VerticalAlignment="Center"/>
+                <TextBlock Text="{Binding TbStatusServer}" Foreground="{Binding TbForegroundStatusServer}" Margin="10 0 0 0" FontFamily="Times New Roman" FontSize="18" VerticalAlignment="Center"/>
+                <Button KeyboardNavigation.TabNavigation="None" Visibility="{Binding VisBtnConnect}" Command="{Binding ClickConnect}" VerticalAlignment="Center" Margin="10 0 0 0" Height="25" Background="#FF2A2A30" BorderThickness="0" Padding="0" Cursor="Arrow">
+                    <StackPanel Orientation="Horizontal" Margin="10 0" HorizontalAlignment="Left">
+                        <materialDesign:PackIcon Kind="Connection" Foreground="#FF7EC772" Width="25" Height="25" VerticalAlignment="Center"/>
+                        <TextBlock Text="Подключиться" Foreground="White" VerticalAlignment="Center" Margin="10 0" FontSize="12" FontFamily="Times New Roman"/>
+                    </StackPanel>
+                </Button>
+                <Button KeyboardNavigation.TabNavigation="None" Visibility="{Binding VisBtnDisconnect}"  Command="{Binding ClickDisconnect}" VerticalAlignment="Center" Margin="10 0 0 0" Height="25" Background="#FF2A2A30" BorderThickness="0" Padding="0" Cursor="Arrow">
+                    <StackPanel Orientation="Horizontal" Margin="10 0" HorizontalAlignment="Left">
+                        <materialDesign:PackIcon Kind="Connection" Foreground="#FFB25F5F" Width="25" Height="25" VerticalAlignment="Center"/>
+                        <TextBlock Text="Отключиться" Foreground="White" VerticalAlignment="Center" Margin="10 0" FontSize="12" FontFamily="Times New Roman"/>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

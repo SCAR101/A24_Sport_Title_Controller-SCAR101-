@@ -1,0 +1,81 @@
+﻿<Page x:Class="A24_Sport_Title_Controller.Views.Menu"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:A24_Sport_Title_Controller.Views" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Menu">
+
+    <Grid>
+        <Grid Width="200" HorizontalAlignment="Left" Background="#FF2A2A30" KeyboardNavigation.TabNavigation="None" Focusable="False">
+            <Grid.RowDefinitions>
+                <!--<RowDefinition Height="60"/>-->
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="8"/>
+                <RowDefinition Height="104"/>
+            </Grid.RowDefinitions>
+            <!--<StackPanel Margin="10 0" Orientation="Horizontal" KeyboardNavigation.TabNavigation="None">
+                <materialDesign:PackIcon Kind="Face" Foreground="#FF838383" Width="30" Height="30" VerticalAlignment="Center"/>
+                <TextBlock Text="{Binding TbA24BrioManager}" Foreground="White" VerticalAlignment="Center" Margin="10 0" FontSize="18" FontFamily="Times New Roman"/>
+            </StackPanel>-->
+            <StackPanel Grid.Row="0" Focusable="False" KeyboardNavigation.TabNavigation="None" Orientation="Vertical">
+                <Button KeyboardNavigation.TabNavigation="None" Focusable="False" Command="{Binding ClickHandball}" HorizontalContentAlignment="Left" Margin="0 0 0 0" Height="50" Background="#FF2A2A30" BorderThickness="0" Padding="0" Cursor="Arrow">
+                    <StackPanel Orientation="Horizontal" Margin="10 0" HorizontalAlignment="Left">
+                        <materialDesign:PackIcon Kind="Handball" Foreground="#FF838383" Width="30" Height="30" VerticalAlignment="Center"/>
+                        <TextBlock Text="Гандбол" Foreground="White" VerticalAlignment="Center" Margin="10 0" FontSize="18" FontFamily="Times New Roman"/>
+                    </StackPanel>
+                </Button>
+                <Button KeyboardNavigation.TabNavigation="None" Focusable="False" Command="{Binding ClickMiniSoccer}" HorizontalContentAlignment="Left" Margin="0 2 0 0" Height="50" Background="#FF2A2A30" BorderThickness="0" Padding="0" Cursor="Arrow">
+                    <StackPanel Orientation="Horizontal" Margin="10 0" HorizontalAlignment="Left">
+                        <materialDesign:PackIcon Kind="SoccerField" Foreground="#FF838383" Width="30" Height="30" VerticalAlignment="Center"/>
+                        <TextBlock Text="Мини футбол" Foreground="White" VerticalAlignment="Center" Margin="10 0" FontSize="18" FontFamily="Times New Roman"/>
+                    </StackPanel>
+                </Button>
+                <Button KeyboardNavigation.TabNavigation="None" Focusable="False" Command="{Binding ClickSoccer}" HorizontalContentAlignment="Left" Margin="0 2 0 0" Height="50" Background="#FF2A2A30" BorderThickness="0" Padding="0" Cursor="Arrow">
+                    <StackPanel Orientation="Horizontal" Margin="10 0" HorizontalAlignment="Left">
+                        <materialDesign:PackIcon Kind="Soccer" Foreground="#FF838383" Width="30" Height="30" VerticalAlignment="Center"/>
+                        <TextBlock Text="Футбол" Foreground="White" VerticalAlignment="Center" Margin="10 0" FontSize="18" FontFamily="Times New Roman"/>
+                    </StackPanel>
+                </Button>
+                <Button KeyboardNavigation.TabNavigation="None" Focusable="False" Command="{Binding ClickWaterPolo}" HorizontalContentAlignment="Left" Margin="0 2 0 0" Height="50" Background="#FF2A2A30" BorderThickness="0" Padding="0" Cursor="Arrow">
+                    <StackPanel Orientation="Horizontal" Margin="10 0" HorizontalAlignment="Left">
+                        <materialDesign:PackIcon Kind="WaterPolo" Foreground="#FF838383" Width="30" Height="30" VerticalAlignment="Center"/>
+                        <TextBlock Text="Водное поло" Foreground="White" VerticalAlignment="Center" Margin="10 0" FontSize="18" FontFamily="Times New Roman"/>
+                    </StackPanel>
+                </Button>
+                <Button KeyboardNavigation.TabNavigation="None" Focusable="False" Command="{Binding ClickBasketBall}" HorizontalContentAlignment="Left" Margin="0 2 0 0" Height="50" Background="#FF2A2A30" BorderThickness="0" Padding="0" Cursor="Arrow">
+                    <StackPanel Orientation="Horizontal" Margin="10 0" HorizontalAlignment="Left">
+                        <materialDesign:PackIcon Kind="Basketball" Foreground="#FF838383" Width="30" Height="30" VerticalAlignment="Center"/>
+                        <TextBlock Text="Баскетбол" Foreground="White" VerticalAlignment="Center" Margin="10 0" FontSize="18" FontFamily="Times New Roman"/>
+                    </StackPanel>
+                </Button>
+                <Button KeyboardNavigation.TabNavigation="None" Focusable="False" Command="{Binding ClickJudo}" HorizontalContentAlignment="Left" Margin="0 2 0 0" Height="50" Background="#FF2A2A30" BorderThickness="0" Padding="0" Cursor="Arrow">
+                    <StackPanel Orientation="Horizontal" Margin="10 0" HorizontalAlignment="Left">
+                        <materialDesign:PackIcon Kind="Wrestling" Foreground="#FF838383" Width="30" Height="30" VerticalAlignment="Center"/>
+                        <TextBlock Text="Дзюдо" Foreground="White" VerticalAlignment="Center" Margin="10 0" FontSize="18" FontFamily="Times New Roman"/>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+            <Separator Grid.Row="1" Background="#FF406787" KeyboardNavigation.TabNavigation="None" Focusable="False"/>
+            <StackPanel Orientation="Vertical" Grid.Row="2">
+                <Button KeyboardNavigation.TabNavigation="None" Focusable="False" Command="{Binding ClickPlayerList}" HorizontalContentAlignment="Left" Height="50" Background="#FF2A2A30" BorderThickness="0" Padding="0" Cursor="Arrow">
+                    <StackPanel Orientation="Horizontal" Margin="10 0">
+                        <materialDesign:PackIcon Kind="Account" Foreground="#FF838383" Width="30" Height="30" VerticalAlignment="Center"/>
+                        <TextBlock Text="Список игроков" Foreground="White" VerticalAlignment="Center" Margin="10 0" FontSize="18" FontFamily="Times New Roman"/>
+                    </StackPanel>
+                </Button>
+                <Button Margin="0 2" KeyboardNavigation.TabNavigation="None" Focusable="False" Command="{Binding ClickSettings}" HorizontalContentAlignment="Left" Height="50" Background="#FF2A2A30" BorderThickness="0" Padding="0" Cursor="Arrow">
+                    <StackPanel Orientation="Horizontal" Margin="10 0">
+                        <materialDesign:PackIcon Kind="Settings" Foreground="#FF838383" Width="30" Height="30" VerticalAlignment="Center"/>
+                        <TextBlock Text="Настройки" Foreground="White" VerticalAlignment="Center" Margin="10 0" FontSize="18" FontFamily="Times New Roman"/>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+        </Grid>
+        <Grid x:Name="gridPageMain" Margin="200 0 0 0" Background="#FF424351">
+            <Frame x:Name="fPageMain" Margin="{Binding GridDownButtonsMargin}" Content="{Binding CurrentPage}" NavigationUIVisibility="Hidden" Opacity="{Binding FrameOpacity}"/>
+        </Grid>
+    </Grid>
+</Page>
